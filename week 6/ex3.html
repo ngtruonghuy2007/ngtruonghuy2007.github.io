@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <title>Ancient Architecture - VNU-IS Assignment</title>
+    <style type="text/css">
+        /* --- TỔNG HỢP CSS TỪ CÁC SLIDE --- */
+        
+        @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+        @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #e2d7aa;
+            color: #000000;
+            font-size: 16px;
+            width: 1180px;
+            line-height: 24px;
+            margin: 0 auto; /* Căn giữa trang */
+        }
+
+        /* Slide 1: Image Header */
+        .img-container {
+            width: 100%;
+            height: 450px;
+            margin-top: 65px;
+            text-align: center;
+        }
+
+        .img-container img {
+            width: 1100px;
+            height: 450px;
+            object-fit: cover;
+        }
+
+        /* Slide 2: Header & Nav */
+        h1 {
+            font-size: 60px;
+            font-family: 'Indie Flower', cursive;
+            letter-spacing: 5px;
+            text-align: center;
+            margin-top: 65px;
+        }
+
+        nav {
+            margin: 30px;
+            text-align: center;
+        }
+
+        nav ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            list-style: none;
+            display: inline;
+            padding: 0 12px;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-size: 28px;
+            color: #000000;
+        }
+
+        /* Slide 3: Navigation Special Colors & Articles */
+        nav ul li:first-of-type a,
+        nav ul li:last-of-type a {
+            color: #0a2d4a;
+            font-weight: bold;
+        }
+
+        main {
+            margin-top: 30px;
+            display: flex; /* Dùng flex để chia 3 cột thẳng hàng */
+            justify-content: space-between;
+        }
+
+        article {
+            width: 370px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        main > article img {
+            width: 350px;
+            height: 200px;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+
+        p {
+            width: 345px;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        /* Slide 4: Typography & Buttons */
+        article img + p:first-letter {
+            font-family: 'Times New Roman', serif; /* Thay cho EucrosiaUPC nếu máy không có */
+            text-transform: uppercase;
+            font-size: 50px;
+            float: left;
+            margin-right: 8px;
+            line-height: 1;
+        }
+
+        .btn-group {
+            margin-top: 15px;
+        }
+
+        .readmore a, .comments a {
+            background: #8b5a2b; /* Màu nâu giả định cho bg2.jpg */
+            color: #ffffff;
+            padding: 10px 15px;
+            text-transform: uppercase;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        footer {
+            margin: 50px 0 20px 0;
+            padding: 10px 0;
+            text-align: center;
+            border-top: 1px solid #ccc;
+        }
+
+        /* Icon giả lập cho Comment */
+        .comments a::before {
+            content: "💬 "; 
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">History</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <h1>Ancient Architecture</h1>
+
+    <div class="img-container">
+        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1100&h=450" alt="Main Architecture">
+    </div>
+
+    <main>
+        <article>
+            <h3>Ancient Roman architecture</h3>
+            <p style="font-size: 14px; color: #555;">Posted on 01.01.2017 by <a href="#">Someone</a></p>
+            <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=350&h=200&fit=crop" alt="Roman">
+            <p>Ancient Roman architecture adopted the external language of classical Greek architecture for the purposes of the ancient Romans, but grew so different from Greek buildings as to become a new architectural style...</p>
+            <div class="btn-group">
+                <span class="comments"><a href="#">0 Comments</a></span>
+                <span class="readmore"><a href="#">View Post</a></span>
+            </div>
+        </article>
+
+        <article>
+            <h3>Ancient Greek architecture</h3>
+            <p style="font-size: 14px; color: #555;">Posted on 01.01.2017 by <a href="#">Someone</a></p>
+            <img src="https://images.unsplash.com/photo-1505461296292-7d67beed10a2?w=350&h=200&fit=crop" alt="Greek">
+            <p>The architecture of ancient Greece is the architecture produced by the Greek-speaking people (Hellenic people) whose culture flourished on the Greek mainland, the Peloponnese, the Aegean Islands...</p>
+            <div class="btn-group">
+                <span class="comments"><a href="#">0 Comments</a></span>
+                <span class="readmore"><a href="#">View Post</a></span>
+            </div>
+        </article>
+
+        <article>
+            <h3>Ancient Indian Architecture</h3>
+            <p style="font-size: 14px; color: #555;">Posted on 01.01.2017 by <a href="#">Someone</a></p>
+            <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=350&h=200&fit=crop" alt="Indian">
+            <p>Indian architecture is as old as the history of the civilization. The earliest remains of recognizable building activity in the India dates back to the Indus Valley cities. Among India's ancient architectural remains...</p>
+            <div class="btn-group">
+                <span class="comments"><a href="#">0 Comments</a></span>
+                <span class="readmore"><a href="#">View Post</a></span>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; Copyright OldWorld by Anonymous. Photos by Anonymous.</p>
+    </footer>
+
+</body>
+</html>
