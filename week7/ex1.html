@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <title>Bài tập thực hành CSS - VNU-IS</title>
+    <style>
+        /* --- PHẦN 1: STYLE CHO LEFT MENU --- */
+        .left-menu-container {
+            margin-bottom: 50px;
+            width: 200px;
+        }
+
+        .menu div {
+            width: 150px;
+            height: 32px;
+            /* Gradient từ xám đậm sang đen */
+            background: -webkit-linear-gradient(top, #333, #999, #000);
+            background: linear-gradient(to bottom, #333, #999, #000);
+            border-radius: 20px 20px 0px 0px;
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+            line-height: 32px; /* Căn giữa chữ theo chiều dọc */
+            text-transform: uppercase;
+        }
+
+        .menu ul {
+            list-style: none; /* Tắt bullet mặc định */
+            box-shadow: 5px 5px 10px #000;
+            border: 1px solid #000;
+            width: 148px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .menu li {
+            padding: 8px 15px;
+            width: 118px;
+            cursor: pointer;
+            text-transform: capitalize;
+            border-bottom: 1px solid #eee;
+            transition: 0.3s;
+        }
+
+        /* Thêm icon giả lập cho bullet.png trong đề bài */
+        .menu li::before {
+            content: "▶ ";
+            color: green;
+            font-size: 10px;
+        }
+
+        .menu li:hover {
+            background-color: #ffff99;
+            font-weight: bold;
+            color: #f00;
+        }
+
+        /* --- PHẦN 2: STYLE CHO NAVIGATION BAR (HEADER) --- */
+        #header {
+            background-color: #f4f4f4; /* Thay cho images/header.jpg nếu bạn chưa có ảnh */
+            border: 1px dashed #ccc;
+            height: auto;
+            width: 900px;
+            margin: 20px auto;
+            padding-bottom: 20px;
+        }
+
+        #logo {
+            padding: 20px 0 10px 50px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        #menu_top {
+            margin: 10px 30px;
+            background: #ffffff;
+            height: 45px;
+            opacity: 0.9;
+            border-radius: 10px 0px 0px 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Menu cấp 1 (Level 1) */
+        .level1 {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .level1 > li {
+            display: inline-block;
+            float: left;
+            position: relative; /* Gốc tọa độ cho menu con */
+            padding: 0;
+        }
+
+        .level1 > li > a {
+            display: block;
+            padding: 12px 20px;
+            color: red;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .level1 > li > a:hover {
+            color: green;
+        }
+
+        /* Menu cấp 2 (Level 2 - Submenu) */
+        .level2 {
+            display: none; /* Ẩn đi khi bình thường */
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ccc;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 180px;
+            z-index: 100;
+        }
+
+        .level2 li {
+            border-bottom: 1px solid #fff;
+        }
+
+        .level2 li a {
+            display: block;
+            padding: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .level2 li:hover {
+            background-color: #cc0;
+        }
+
+        /* Hiệu ứng Hover để hiện Menu cấp 2 */
+        .level1 li:hover > .level2 {
+            display: block;
+        }
+
+        /* Clearfix để không bị lỗi float */
+        .level1::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="left-menu-container">
+        <div class="menu">
+            <div>MENU</div>
+            <ul>
+                <li>home</li>
+                <li>categories</li>
+                <li>contact</li>
+                <li>about us</li>
+            </ul>
+        </div>
+    </div>
+
+    <hr>
+
+    <header id="header">
+        <div id="logo">
+            FLOWER SHOP LOGO
+            </div>
+
+        <nav id="menu_top">
+            <ul class="level1">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Introduction</a></li>
+                <li>
+                    <a href="#">Flower Category ▾</a>
+                    <ul class="level2">
+                        <li><a href="#">Sun Flower</a></li>
+                        <li><a href="#">Rose Flower</a></li>
+                        <li><a href="#">Lily Flower</a></li>
+                        <li><a href="#">Tulips Flower</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Register</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+</body>
+</html>
