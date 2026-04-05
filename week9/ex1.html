@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 11 & 12 - JS Sum</title>
+</head>
+<body>
+    <h2>Bài tập: Tính tổng 2 số có kiểm tra định dạng</h2>
+    <p>Nhấn vào nút bên dưới để bắt đầu chương trình.</p>
+    <button onclick="calculateSum()">Nhập số liệu</button>
+
+    <script>
+        function calculateSum() {
+            // Sử dụng Regular Expression để kiểm tra xem chuỗi nhập vào có phải là số (bao gồm cả số âm và số thập phân)
+            const numberRegex = /^-?\d+(\.\d+)?$/;
+
+            // 1. Nhập và kiểm tra số A
+            let numA = prompt("Enter number A", "");
+            
+            // Nếu người dùng bấm Cancel
+            if (numA === null) return; 
+
+            // Kiểm tra định dạng bằng Regex
+            if (!numberRegex.test(numA)) {
+                // Hiển thị thông báo lỗi nếu nhập sai định dạng (VD: 12a5)
+                alert("Number A is formatted incorrect");
+                return; // Dừng chương trình
+            }
+
+            // 2. Nhập và kiểm tra số B
+            let numB = prompt("Enter number B", "");
+            
+            // Nếu người dùng bấm Cancel
+            if (numB === null) return;
+
+            // Kiểm tra định dạng bằng Regex
+            if (!numberRegex.test(numB)) {
+                alert("Number B is formatted incorrect");
+                return; // Dừng chương trình
+            }
+
+            // 3. Ép kiểu dữ liệu sang số thực (float) và tính tổng
+            let sum = parseFloat(numA) + parseFloat(numB);
+
+            // 4. Hiển thị kết quả
+            alert("Sum of two numbers is: " + sum);
+        }
+    </script>
+</body>
+</html>
